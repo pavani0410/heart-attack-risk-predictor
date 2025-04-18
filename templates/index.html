@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart Attack Risk Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+  display: flex;
+  align-items: center; /* Vertically centers both image and form */
+  justify-content: center;
+  padding: 20px;
+}
+
+
+    .heart-image {
+  width: 500px; /* Made it larger */
+  height: auto;
+  margin-right: 80px; /* Spacing between image and form */
+}
+
+
+    .content {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.4;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ✅ Flask-safe static file reference -->
+    <img src="{{ url_for('static', filename='heart.jpg') }}" alt="Heart Illustration" class="heart-image" />
+
+    <div class="content">
+      <h1>HEART ATTACK RISK<br>PREDICTOR</h1>
+      <!-- ✅ Correct  to go to the form -->
+      <a href="{{ url_for('predict') }}" class="btn">Get started →</a>
+    </div>
+  </div>
+</body>
+</html>

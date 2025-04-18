@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prediction Results</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Georgia', serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+  display: flex;
+  align-items: center; /* Vertically centers both image and form */
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.heart-image {
+  width: 500px; /* Made it larger */
+  height: auto;
+  margin-right: 80px; /* Spacing between image and form */
+}
+
+
+    .results {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .results h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .result-box {
+      background-color: #2e2e2e;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .risk {
+      color: #f44336;
+    }
+
+    .no-risk {
+      color: #4caf50;
+    }
+
+    .risk-factors {
+      background-color: #3e3e3e;
+      padding: 20px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #ffc107;
+    }
+
+    .back-link {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #d9534f;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .back-link:hover {
+      background-color: #c9302c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='heart.jpg') }}" alt="Heart Image" class="heart-image" />
+    <div class="results">
+      <h2>PREDICTION RESULTS:</h2>
+
+      <div class="result-box {{ 'risk' if rf_pred == 1 else 'no-risk' }}">
+        ✅ Random Forest Prediction: {{ 'Risk' if rf_pred == 1 else 'No Risk' }}
+      </div>
+
+      <div class="result-box {{ 'risk' if dl_pred == 1 else 'no-risk' }}">
+        ✅ Deep Learning Prediction: {{ 'Risk' if dl_pred == 1 else 'No Risk' }}
+      </div>
+
+      <div class="result-box {{ 'risk' if qnn_pred == 1 else 'no-risk' }}">
+        ✅ Quantum Neural Network Prediction: {{ 'Risk' if qnn_pred == 1 else 'No Risk' }}
+      </div>
+
+      <div class="result-box {{ 'risk' if qml_pred == 1 else 'no-risk' }}">
+        ✅ Quantum Machine Learning Prediction: {{ 'Risk' if qml_pred == 1 else 'No Risk' }}
+      </div>
+
+      {% if rf_pred or dl_pred or qnn_pred or qml_pred %}
+      <div class="risk-factors">
+        <h3>🚨 Why You May Be at Risk:</h3>
+        <p>{{ risk_factors }}</p>
+      </div>
+      {% endif %}
+
+      <a href="/" class="back-link">🔙 Go Back</a>
+    </div>
+  </div>
+</body>
+</html>
