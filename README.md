@@ -12,13 +12,11 @@ The app accepts key medical data like age, cholesterol, BP, and habits, and prov
 
 ## Features
 
-- ✅ Multi-model risk prediction: ML, DL, QNN, and QML
-- ✅ Input preprocessing using scalers and label encoders
-- ✅ **Explains why you may be at risk** with personalized analysis (e.g., "Smoking increases heart attack risk")
-- ✅ UI fully implemented using a **custom Figma design**
-- ✅ Clear interface with styled feedback for each model
-
----
+-  Multi-model risk prediction: ML, DL, QNN, and QML
+-  Input preprocessing using scalers and label encoders
+-  **Explains why you may be at risk** with personalized analysis (e.g., "Smoking increases heart attack risk")
+-  UI fully implemented using a **custom Figma design**
+-  Clear interface with styled feedback for each model
 
 ## Figma Design
 
@@ -122,3 +120,7 @@ HTML templates were implemented to match the exact layout, theme, and user flow.
 ## License
 
 This project is released under the **MIT License**.
+
+## Credits
+Heart Attack Risk Predictor module  developed and designed by Pavani Sharma, later integrated into this unified health risk prediction system.
+
