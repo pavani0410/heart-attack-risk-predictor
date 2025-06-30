@@ -44,7 +44,7 @@ HTML templates were implemented to match the exact layout, theme, and user flow.
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/heart-attack-risk-predictor.git
+   git clone https://github.com/pavani0410/heart-attack-risk-predictor.git
    cd heart-attack-risk-predictor
    ```
 
